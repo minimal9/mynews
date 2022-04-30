@@ -8,7 +8,7 @@
         <div class="low">
             <div class="col-md-8 mx -auto">
                 <h1>My プロフィール</h1>
-                              <form action="{{ action('Admin\ProfileController@create') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ action('Admin\ProfileController@create') }}" method="post" enctype="multipart/form-data">
 
                     @if (count($errors) > 0)
                         <ul>
@@ -30,21 +30,15 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label class="col-md-2">趣味</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="hobby" value="{{ old('hobby') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="col-md-2">自己紹介欄</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="introduction" value="{{ old('introduction') }}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">本文</label>
-                        <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="20">{{ old('body') }}</textarea>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">画像</label>
-                        <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="image">
+                            <textarea class="form-control" name="introduction" rows="20">{{ old('introduction') }}</textarea>
                         </div>
                     </div>
                     {{ csrf_field() }}
